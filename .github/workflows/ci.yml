@@ -16,11 +16,11 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - run: echo ${{github.ref}}
-      - run: yarn
+      - run: npm install
       - run: yarn run lint
       - run: yarn run tsc
       - run: yarn run build
-      - run: yarn run test:all
+      - run: yarn run test:e2e
         env:
           CI: true
           PROGRESS: none
